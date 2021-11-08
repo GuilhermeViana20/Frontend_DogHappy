@@ -1,162 +1,79 @@
 <template>
     <div id="navbar">
-        <!-- Navbar-->
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid justify-content-between">
-                <!-- Left elements -->
-                <div class="d-flex">
-                    <!-- Brand -->
-                    <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
-                        <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="20" alt="" loading="lazy" style="margin-top: 2px;" />
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Navbar brand -->
+                    <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                        <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="15" alt="" loading="lazy" />
                     </a>
-
-                    <!-- Search form -->
-                    <form class="input-group w-auto my-auto d-none d-sm-flex">
-                        <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" style="min-width: 125px;" />
-                        <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"></i></span>
-                    </form>
+                    <!-- Left links -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/" tag="button">Home</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/dogs" tag="button">Dogs</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Projects</a>
+                        </li>
+                    </ul>
+                    <!-- Left links -->
                 </div>
-                <!-- Left elements -->
-
-                <!-- Center elements -->
-                <ul class="navbar-nav flex-row d-none d-md-flex">
-                    <li class="nav-item me-3 me-lg-1 active">
-                        <a class="nav-link" href="#">
-                            <span><i class="fas fa-home fa-lg"></i></span>
-                            <span class="badge rounded-pill badge-notification bg-danger">1</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link" href="#">
-                        <span><i class="fas fa-flag fa-lg"></i></span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link" href="#">
-                        <span><i class="fas fa-video fa-lg"></i></span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link" href="#">
-                        <span><i class="fas fa-shopping-bag fa-lg"></i></span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link" href="#">
-                        <span><i class="fas fa-users fa-lg"></i></span>
-                        <span class="badge rounded-pill badge-notification bg-danger">2</span>
-                        </a>
-                    </li>
-                </ul>
-                <!-- Center elements -->
+                <!-- Collapsible wrapper -->
 
                 <!-- Right elements -->
-                <ul class="navbar-nav flex-row">
-                <li class="nav-item me-3 me-lg-1">
-                    <a class="nav-link d-sm-flex align-items-sm-center" href="#">
-                    <img
-                        src="https://mdbootstrap.com/img/new/avatars/1.jpg"
-                        class="rounded-circle"
-                        height="22"
-                        alt=""
-                        loading="lazy"
-                    />
-                    <strong class="d-none d-sm-block ms-1">John</strong>
+                <div class="d-flex align-items-center">
+                    <!-- Icon -->
+                    <a class="text-reset me-3" href="#">
+                        <i class="fas fa-shopping-cart"></i>
                     </a>
-                </li>
-                <li class="nav-item me-3 me-lg-1">
-                    <a class="nav-link" href="#">
-                    <span><i class="fas fa-plus-circle fa-lg"></i></span>
-                    </a>
-                </li>
-                <li class="nav-item dropdown me-3 me-lg-1">
-                    <a
-                    class="nav-link dropdown-toggle hidden-arrow"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                    >
-                    <i class="fas fa-comments fa-lg"></i>
 
-                    <span class="badge rounded-pill badge-notification bg-danger">6</span>
+                    <!-- Notifications -->
+                    <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge rounded-pill badge-notification bg-danger">1</span>
                     </a>
-                    <ul
-                    class="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="navbarDropdownMenuLink"
-                    >
-                    <li>
-                        <a class="dropdown-item" href="#">Some news</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Another news</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" href="#">Some news</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Another news</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </li>
                     </ul>
-                </li>
-                <li class="nav-item dropdown me-3 me-lg-1">
-                    <a
-                    class="nav-link dropdown-toggle hidden-arrow"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                    >
-                    <i class="fas fa-bell fa-lg"></i>
-                    <span class="badge rounded-pill badge-notification bg-danger">12</span>
+
+                    <!-- Avatar -->
+                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="rounded-circle" height="25" alt="" loading="lazy" />
                     </a>
-                    <ul
-                    class="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="navbarDropdownMenuLink"
-                    >
-                    <li>
-                        <a class="dropdown-item" href="#">Some news</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Another news</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink" >
+                        <li>
+                            <a class="dropdown-item" href="#">My profile</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Settings</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </li>
                     </ul>
-                </li>
-                <li class="nav-item dropdown me-3 me-lg-1">
-                    <a
-                    class="nav-link dropdown-toggle hidden-arrow"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                    >
-                    <i class="fas fa-chevron-circle-down fa-lg"></i>
-                    </a>
-                    <ul
-                    class="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="navbarDropdownMenuLink"
-                    >
-                    <li>
-                        <a class="dropdown-item" href="#">Some news</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Another news</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                    </ul>
-                </li>
-                </ul>
+                </div>
                 <!-- Right elements -->
             </div>
+            <!-- Container wrapper -->
         </nav>
         <!-- Navbar -->
     </div>
