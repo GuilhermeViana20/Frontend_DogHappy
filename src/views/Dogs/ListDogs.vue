@@ -18,56 +18,15 @@
 
                 <div class="row">
 
-                    <div class="col-md-4 col-sm-3">
+                    <div v-for="(dog, index) in dogs" :key="index" class="col-md-4 col-sm-3">
                         <div class="card">
-                            <img src="https://mdbootstrap.com/img/new/standard/city/062.jpg" class="card-img-top" alt="..." />
+                            <img src="https://www.petz.com.br/cachorro/racas/husky-siberiano/img/husky-siberiano-caracteristicas-guia-racas.webp" class="card-img-top" alt="..." />
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h5 class="card-title">{{ dog.nome }}</h5>
+                                <p class="card-text" limit="50">{{ dog.descricao.substring(0,100) }}...</p>
                             </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                            </ul>
                             <div class="card-body">
-                                <a href="#" class="btn btn-primary btn-rounded">Button</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 col-sm-3">
-                        <div class="card">
-                            <img src="https://mdbootstrap.com/img/new/standard/city/062.jpg" class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                            </ul>
-                            <div class="card-body">
-                                <a href="#" class="btn btn-primary btn-rounded">Button</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-3">
-                        <div class="card">
-                            <img src="https://mdbootstrap.com/img/new/standard/city/062.jpg" class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                            </ul>
-                            <div class="card-body">
-                                <a href="#" class="btn btn-primary btn-rounded">Button</a>
+                                <a href="#" class="btn btn-primary btn-rounded">Ler mais</a>
                             </div>
                         </div>
                     </div>
@@ -82,6 +41,8 @@
 </template>
 
 <script>
+import urlApi from "@/router/urlApi";
+import axios from 'axios';
 
 export default {
 	name: 'Home',
@@ -89,24 +50,25 @@ export default {
 	},
     data() {
         return {
-            apiUrl: 'http://127.0.0.1:8000',
+            dogs: [],
         }
     },
 
     mounted() {
-
         this.getDogs();
-
     },
 
     methods: {
 
         getDogs()
         {
-            this.$http.get( this.apiUrl + 'dogs' )
-            .then(function (response) {
-                console.log(response);
-            });
+            axios.get(urlApi + 'dogs')
+            .then(response => {
+               this.dogs = response.data
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
         }
 
     }
